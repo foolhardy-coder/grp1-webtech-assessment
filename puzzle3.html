@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-section">
+            <img src="website_icon.png" alt="Website Icon" class="navbar-icon">
+            <div class="navbar-title">A Murder Mystery</div>
+        </div>
+        <div class="navbar-section">
+            <a href="index.html">The Story</a>
+            <a href="puzzle1.html">Puzzle 1</a>
+            <a href="puzzle2.html">Puzzle 2</a>
+            <a href="puzzle3.html" class="selected">Puzzle 3</a>
+            <a href="puzzle4.html">Puzzle 4</a>
+            <a href="puzzle5.html">Puzzle 5</a>
+            <a href="tools.html">Tools</a>
+            <a href="suspects.html">Suspects</a>
+        </div>
+    </header>
+    <main>
+        <section class="puzzle-layout">
+          <div class="left-side">
+            <div class="description-box">
+                <h2>Crack The Code</h2>
+                <p>Guess the four-digit lock code to unlock a clue:</p>
+            </div>
+            
+            <div class="lock-container"> 
+                <svg class="lock-img" width="300" height="300" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  <line x1="12" y1="16" x2="12" y2="18"></line>
+                </svg>
+                
+                <div class="inputs">
+                  <input type="text" maxlength="1">
+                  <input type="text" maxlength="1">
+                  <input type="text" maxlength="1">
+                  <input type="text" maxlength="1">
+                </div>
+              </div>
+            </div>
+
+            <div class="right-side">
+              <div class="last-guess-container">
+                <h3>LAST GUESS</h3>
+                <div id="feedback"></div>
+            </div>
+
+              <div class="key-box">
+                <h4>Key:</h4>
+                <p><span class="key-color correct"></span> Correct digit & position</p>
+                <p><span class="key-color partial"></span> Correct digit, wrong position</p>
+                <p><span class="key-color wrong"></span> Incorrect digit</p>
+              </div>
+
+              <div class ="button-container">
+                <button id="try-btn">TRY CODE...</button>
+                <button id="clear-btn">CLEAR</button>
+              </div>
+          </div>
+        </section>
+
+        <div id="popup" class="hidden">
+          <span id="close-popup">X</span>
+          <p>You're in!<br><strong>**INSERT CLUE**</strong></p>
+        </div>
+      </main>
+    
+      <script src="lockcrack.js"></script>
+
+        <footer>
+        <nav style="text-align: left; color: var(--header-text-color);">
+            <h3>Additional Links</h3>
+            <a href="#">Team Info</a> | 
+            <a href="#">Project Info</a> | 
+            <a href="#">Cheat Sheet</a> | 
+            <a href="#">References</a>
+        </nav>
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+    </footer>
+    </body>
+    </html>
+    
