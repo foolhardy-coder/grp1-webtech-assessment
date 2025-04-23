@@ -63,7 +63,7 @@ header, footer {
 }
 
 .dropdown-content {
-    display: none;
+    visibility: hidden; /* Use visibility instead of display */
     position: absolute;
     background-color: var(--white);
     min-width: 160px;
@@ -71,7 +71,9 @@ header, footer {
     z-index: 1;
     border-radius: 5px;
     padding: 0.5rem 0;
-    list-style: none; /* Remove bullet points */
+    list-style: none;
+    opacity: 0; /* Add opacity for smooth transition */
+    transition: visibility 0.3s ease, opacity 0.3s ease;
 }
 
 .dropdown-content a {
@@ -89,7 +91,8 @@ header, footer {
 
 /* Ensure the dropdown menu stays visible when hovering over the dropdown container */
 .dropdown:hover .dropdown-content {
-    display: block;
+    visibility: visible; /* Use visibility instead of display */
+    opacity: 1; /* Smooth transition */
 }
 
 /* Main Content Styles */
