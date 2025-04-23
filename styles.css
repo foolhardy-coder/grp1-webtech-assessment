@@ -71,6 +71,7 @@ header, footer {
     z-index: 1;
     border-radius: 5px;
     padding: 0.5rem 0;
+    list-style: none; /* Remove bullet points */
 }
 
 .dropdown-content a {
@@ -86,6 +87,7 @@ header, footer {
     color: var(--red);
 }
 
+/* Ensure the dropdown menu stays visible when hovering over the dropdown container */
 .dropdown:hover .dropdown-content {
     display: block;
 }
