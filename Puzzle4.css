@@ -158,6 +158,26 @@ min-width: 140px;
 z-index: 1000;
 }
 
+.top-nav {
+flex-wrap: wrap;
+}
+
+.nav-links {
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.nav-links li {
+flex: 1 1 auto;
+text-align: center;
+}
+
+.nav-links li a {
+display: inline-block;
+min-width: 60px;
+text-align: center;
+}
+
 .nav-links .dropdown-content li a {
 display: block;
 padding: 0.5rem 1rem;
@@ -216,67 +236,88 @@ font-size: 0.7em;
 color: #bbb;
 }
 
-
-@media (max-width: 1024px) {
+main, .puzzle-box, .instruction, .answer-box input, .confirm-button {
+max-width: 100%;
+box-sizing: border-box;
+overflow-wrap: break-word;
+word-break: break-word;
+}
+.puzzle-box {
+width: 100%;
+overflow-x: auto;
+}
+.answer-box input {
+width: 100%;
+margin-top: 10px;
+}
 .periodic-table {
-    grid-template-columns: repeat(18, 50px);
-    grid-template-rows: repeat(10, 50px);
+width: 100%;
+overflow-x: auto;
+}
+footer, .top-nav {
+width: 100%;
+box-sizing: border-box;
 }
 
-.element {
-    font-size: 0.8em;
+@media (max-width: 1200px) {
+.periodic-table {
+    grid-template-columns: repeat(18, minmax(35px, 50px));
 }
 }
-
-@media (max-width: 768px) {
+@media (max-width: 992px) {
 .top-nav {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+}
+.nav-links {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.periodic-table {
+    grid-template-columns: repeat(9, minmax(40px, 50px));
+}
+.answer-box input, .confirm-button {
+    width: 80%;
+}
+}
+@media (max-width: 768px) {
+.periodic-table {
+    grid-template-columns: repeat(6, minmax(40px, 45px));
+}
+.element {
+    padding: 4px;
+}
+.answer-box input, .confirm-button {
+    width: 90%;
+}
+}
+
+@media (max-width: 600px) {
+.top-nav {
+    flex-direction: column;
+    align-items: center;
 }
 
 .nav-links {
     flex-direction: column;
-    width: 100%;
-}
-
-.periodic-table {
-    grid-template-columns: repeat(9, 50px);
-    grid-template-rows: auto;
-}
-
-.element {
-    font-size: 0.8em;
-}
-
-.answer-box input {
-    width: 90%;
-}
-
-.confirm-button {
-    width: 90%;
+    gap: 0.5rem;
 }
 }
 
 @media (max-width: 480px) {
 .periodic-table {
-    grid-template-columns: repeat(6, 45px);
+    grid-template-columns: repeat(4, minmax(35px, 45px));
     gap: 3px;
 }
-
 .element {
+    padding: 2px;
     font-size: 0.7em;
-    padding: 5px;
 }
-
-.answer-box input {
-    width: 100%;
-}
-
-.confirm-button {
-    width: 100%;
-}
-
 main {
     padding: 10px;
+}
+.answer-box input, .confirm-button {
+    width: 95%;
 }
 }
