@@ -62,22 +62,22 @@
     var output = "";
     for (var i = 0; i < str.length; i++) {
       var ascii = str[i].charCodeAt();
-  
+
       if ((ascii >= 65 && ascii <= 90) || (ascii >= 97 && ascii <= 122)) {
-       var isUpper = ascii <= 90;
-        ascii += shift;
-  
-        if (isUpper && ascii > 90) {
-           ascii -= 26;
-            } else if (!isUpper && ascii > 122) {
-              ascii -= 26;
-             }
-          }
-  
-          output += String.fromCharCode(ascii);
-        }
-        return output;
+      var isUpper = ascii <= 90;
+      ascii -= shift; // Subtract shift for decoding
+
+      if (isUpper && ascii < 65) {
+        ascii += 26;
+      } else if (!isUpper && ascii < 97) {
+        ascii += 26;
       }
+    }
+
+    output += String.fromCharCode(ascii);
+  }
+  return output;
+}
   
       // Function to get input values and display result
       function decode() {
