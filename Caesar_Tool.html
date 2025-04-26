@@ -57,7 +57,6 @@
 
   <script>
 
-    // Caesar Cipher function
     function caesarCipher(str, shift) {
     var output = "";
     for (var i = 0; i < str.length; i++) {
@@ -65,7 +64,7 @@
 
       if ((ascii >= 65 && ascii <= 90) || (ascii >= 97 && ascii <= 122)) {
       var isUpper = ascii <= 90;
-      ascii -= shift; // Subtract shift for decoding
+      ascii -= shift;
 
       if (isUpper && ascii < 65) {
         ascii += 26;
@@ -79,7 +78,7 @@
   return output;
 }
   
-      // Function to get input values and display result
+      
       function decode() {
         var phrase = document.getElementById("phrase").value;
         var shift = parseInt(document.getElementById("shift").value);
