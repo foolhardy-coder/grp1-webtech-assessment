@@ -215,3 +215,67 @@ h1 {
   font-size: 0.7em;
   color: #bbb;
 }
+
+@media (max-width: 1024px) {
+  .periodic-table {
+      grid-template-columns: repeat(18, 50px);
+      grid-template-rows: repeat(10, 50px);
+  }
+
+  .element {
+      font-size: 0.8em;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .periodic-table {
+      grid-template-columns: repeat(9, 50px);
+      grid-template-rows: auto;
+  }
+
+  .element {
+      font-size: 0.8em;
+  }
+
+  .answer-box input {
+      width: 90%;
+  }
+
+  .confirm-button {
+      width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .periodic-table {
+      grid-template-columns: repeat(6, 45px);
+      gap: 3px;
+  }
+
+  .element {
+      font-size: 0.7em;
+      padding: 5px;
+  }
+
+  .answer-box input {
+      width: 100%;
+  }
+
+  .confirm-button {
+      width: 100%;
+  }
+
+  main {
+      padding: 10px;
+  }
+}
