@@ -59,6 +59,14 @@ main {
   padding: 15px;
   margin-bottom: 20px;
   font-family: monospace;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+.puzzle-container {
+  display: flex;
+  justify-content: center;
 }
 
 .answer-box input {
