@@ -604,7 +604,7 @@ const scenes = {
             lines: [
                 {
                     type: "narration",
-                    text: "Alec Moreau is arrested for the murder of Ellen Clyde, further interrogations prove pointless as he is determined to keep his mouth shut. Dominic is given a semblance of closure. You solved it Keel, Great Work!!"
+                    text: "Alec Moreau is arrested for the murder of Ellen Clyde, further interrogations prove pointless as he is determined to keep his mouth shut. Dominic is given a semblance of closure. You solved it Keel, Great Work!!!"
                 }
             ]
         }

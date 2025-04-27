@@ -80,7 +80,7 @@ const periodicElements = [
     { symbol: "Pt", name: "Platinum", number: "78" },
     { symbol: "Au", name: "Gold", number: "79" },
     { symbol: "Hg", name: "Mercury", number: "80" },
-    { symbol: "Tl", name: "Thallium", number: "81" }, // Corrected from 'Ti' to 'Tl'
+    { symbol: "Tl", name: "Thallium", number: "81" },
     { symbol: "Pb", name: "Lead", number: "82" },
     { symbol: "Bi", name: "Bismuth", number: "83" },
     { symbol: "Po", name: "Polonium", number: "84" },
@@ -134,5 +134,5 @@ function renderPeriodicTable() {
     });
 }
 
-// Call the function once the DOM is loaded
+
 document.addEventListener('DOMContentLoaded', renderPeriodicTable);

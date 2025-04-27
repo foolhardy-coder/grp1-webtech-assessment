@@ -96,14 +96,13 @@ function checkPuzzleCompletion() {
     }
 }
 
-// Function to decode the message in real-time (for display in decoded output)
+
 function decodeMessage() {
     const scrambledText = document.getElementById('customScrambledMessageInput').value.toLowerCase();
     const decodedOutput = document.getElementById('customDecodedOutput');
     const letterInputs = document.querySelectorAll('.assigned-letter');
     let mapping = {};
 
-    // Build current mapping from user inputs
     letterInputs.forEach(input => {
         const originalLetter = input.getAttribute('data-letter');
         const mappedLetter = input.value.toLowerCase();
@@ -112,47 +111,38 @@ function decodeMessage() {
         }
     });
 
-    // Decode the message based on current user mapping
+
     let decodedText = '';
     for (let char of scrambledText) {
         if (mapping[char]) {
             decodedText += mapping[char];
         } else {
-            decodedText += char; // Keep unchanged if no mapping (spaces, punctuation)
+            decodedText += char;
         }
     }
 
     decodedOutput.textContent = decodedText;
-
-    // Check if puzzle is complete after each update
     checkPuzzleCompletion();
 }
 
-// Attach event listeners once DOM is loaded
+
 document.addEventListener('DOMContentLoaded', function() {
     renderWordScramble();
 
-    // Attach event listeners to letter inputs for real-time decoding and completion check on keyup (key press)
+
     const letterInputs = document.querySelectorAll('.assigned-letter');
     letterInputs.forEach(input => {
         input.addEventListener('keyup', decodeMessage); // Trigger on key press (keyup)
     });
 
-    // Attach event listener to textarea for updates on keyup (key press)
     document.getElementById('customScrambledMessageInput').addEventListener('keyup', decodeMessage);
-
-    // Attach event listener to the Next button for manual decoding and completion check
     document.getElementById('checkButton').addEventListener('click', decodeMessage);
-
-    // Initial decode in case content is already present
     decodeMessage();
 
-    // Redirect button in modal (labeled as "Next")
     document.getElementById('redirectButton').addEventListener('click', function() {
         window.location.href = 'index.html';
     });
 
-    // Close modal by clicking outside of it
     const modal = document.getElementById('completionModal');
     window.addEventListener('click', function(event) {
         if (event.target === modal) {
