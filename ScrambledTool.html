@@ -19,7 +19,6 @@
             <a href="puzzle2.html">Puzzle 2</a>
             <a href="puzzle3.html">Puzzle 3</a>
             <a href="puzzle4.html">Puzzle 4</a>
-            <a href="puzzle5.html">Puzzle 5</a>
             <li class="dropdown">
                 <a href="#">Tools</a>
                 <ul class="dropdown-content">
@@ -33,141 +32,28 @@
     </header>
     <main>
         <section>
-            <h2>Custom Alphabet Cipher</h2>
-            <p>Enter a scrambled message and assign a letter to each letter of the alphabet to decode your message:</p>
+            <h2>Scramble Alphabet Cipher</h2>
+            <p>Enter a message below to encode it using the scramble alphabet cipher:</p>
+            <label for="messageInput">Message:</label>
+            <input type="text" id="messageInput" placeholder="Enter your message here">
 
-            <label for="customScrambledMessageInput">Scrambled Message:</label>
-            <input type="text" id="customScrambledMessageInput" placeholder="Enter your scrambled message here">
+            <button id="encodeButton">Encode Message</button>
 
-            <h3>Assign Letters:</h3>
-            <table>
-                <tr>
-                    <!-- First row of 13 letters -->
-                    <td class="letter-group">
-                        <span>A</span>
-                        <input type="text" class="assigned-letter" data-letter="a" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>B</span>
-                        <input type="text" class="assigned-letter" data-letter="b" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>C</span>
-                        <input type="text" class="assigned-letter" data-letter="c" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>D</span>
-                        <input type="text" class="assigned-letter" data-letter="d" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>E</span>
-                        <input type="text" class="assigned-letter" data-letter="e" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>F</span>
-                        <input type="text" class="assigned-letter" data-letter="f" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>G</span>
-                        <input type="text" class="assigned-letter" data-letter="g" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>H</span>
-                        <input type="text" class="assigned-letter" data-letter="h" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>I</span>
-                        <input type="text" class="assigned-letter" data-letter="i" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>J</span>
-                        <input type="text" class="assigned-letter" data-letter="j" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>K</span>
-                        <input type="text" class="assigned-letter" data-letter="k" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>L</span>
-                        <input type="text" class="assigned-letter" data-letter="l" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>M</span>
-                        <input type="text" class="assigned-letter" data-letter="m" maxlength="1">
-                    </td>
-                </tr>
-                <tr>
-                    <!-- Second row of 13 letters -->
-                    <td class="letter-group">
-                        <span>N</span>
-                        <input type="text" class="assigned-letter" data-letter="n" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>O</span>
-                        <input type="text" class="assigned-letter" data-letter="o" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>P</span>
-                        <input type="text" class="assigned-letter" data-letter="p" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>Q</span>
-                        <input type="text" class="assigned-letter" data-letter="q" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>R</span>
-                        <input type="text" class="assigned-letter" data-letter="r" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>S</span>
-                        <input type="text" class="assigned-letter" data-letter="s" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>T</span>
-                        <input type="text" class="assigned-letter" data-letter="t" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>U</span>
-                        <input type="text" class="assigned-letter" data-letter="u" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>V</span>
-                        <input type="text" class="assigned-letter" data-letter="v" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>W</span>
-                        <input type="text" class="assigned-letter" data-letter="w" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>X</span>
-                        <input type="text" class="assigned-letter" data-letter="x" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>Y</span>
-                        <input type="text" class="assigned-letter" data-letter="y" maxlength="1">
-                    </td>
-                    <td class="letter-group">
-                        <span>Z</span>
-                        <input type="text" class="assigned-letter" data-letter="z" maxlength="1">
-                    </td>
-                </tr>
-            </table>
+            <h3>Encoded Message:</h3>
+            <p id="encodedOutputMessage"></p>
 
-            <h3>Decoded Message:</h3>
-            <p id="customDecodedOutput"></p>
+            <h2>Encode a Paragraph from the Library</h2>
+            <p>Click the button below to encode a randomly selected paragraph from the library:</p>
+            <button id="encodedParagraphButton">Encode a Random Paragraph</button>
+            <p id="encodedOutputParagraph"></p>
         </section>
     </main>
-    <footer>
-        <nav style="text-align: left; color: var(--header-text-color);">
-            <h3>Additional Links</h3>
-            <a href="#">Team Info</a> | 
-            <a href="#">Project Info</a> | 
-            <a href="#">Cheat Sheet</a> | 
-            <a href="#">References</a>
-        </nav>
-        <p>&copy; 2025 My Website. All rights reserved.</p>
+    <script src="scrambleCipher.js"></script>
+    <footer style="text-align: left;">
+
+            <p>Created by Ross Wilson</p>
+            <p>2025 - Edinburgh Napier</p>
+
     </footer>
-    <script src="tools.js"></script>
-    <script src="decodeCipher.js"></script>
 </body>
 </html>
