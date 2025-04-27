@@ -155,13 +155,11 @@ function renderTurn() {
     currentLineIndex = 0;
     const currentTurn = scenes[currentSceneName][currentTurnIndex];
     if (currentTurn.puzzlePage) {
-        const puzzleCompleted = localStorage.getItem('puzzle3Completed') === 'true';
-        if (puzzleCompleted) {
             currentTurnIndex++;
             saveProgress();
             if (currentTurnIndex < scenes[currentSceneName].length) {
                 renderTurn();
-            } else {}
+
             return;
         }
         saveProgress();

@@ -6,7 +6,6 @@ const scenes = {
                 {
                     speaker: "Mary Fields",
                     text: "Detective? Mary Fields.",
-                    avatar: "url('https://i.pravatar.cc/60?img=1')",
                     type: "dialogue"
                 },
                 {
@@ -170,6 +169,102 @@ const scenes = {
             }]
         }],
     scene3: [
+        {
+            turnId: 1,
+            lines: [
+                {
+                    type: "narration",
+                    text: "Keel is informed that Serena was brought into a nearby station by a passerby, disoriented and uncoordinated. She passed out at the reception and was promptly taken to a hospital. The doctor's report reveals trace amounts of scopolamine in her blood, with estimates suggesting it was ingested during the wedding party.\n\nAfter conducting further inquiries, Keel discovers that Dominic had hired a personal caterer for the event, Imani Costa. With this new lead in hand, Keel immediately arranges a meeting with Imani.",
+                }
+            ]
+        },
+        {
+            turnId: 2,
+            lines: [
+                {
+                    speaker: "Det. Keel",
+                    text: "Glad you could make time for me on such short notice.",
+                    type: "dialogue"
+                },
+                {
+                    speaker: "Imani Costa",
+                    text: "Can't say I was busy.",
+                    type: "dialogue"
+                },
+                {
+                    speaker: "Det. Keel",
+                    text: "Well, that’s good to hear. I’m here to ask you about the wedding, specifically the food and drinks. You were in charge of that, right?",
+                    type: "dialogue"
+                }
+            ]
+        },
+        {
+            turnId: 3,
+            lines: [
+                {
+                    speaker: "Imani Costa",
+                    text: "Yep, Dominic hired me for the whole thing. Food, drinks, the works. He’s got quite the taste, you know.",
+                    type: "dialogue"
+                },
+                {
+                    speaker: "Det. Keel",
+                    text: "I imagine. Anything out of the ordinary happen that night? Something you might not have expected?",
+                    type: "dialogue"
+                },
+                {
+                    speaker: "Imani Costa",
+                    text: "Not really, but my drinks were definitely out of the ordinary for Dominic's guests. I’ve dabbled in some... exotic concoctions over the years—nothing too out there, but a few that’ll get you talking.",
+                    type: "dialogue"
+                }
+            ]
+        },
+        {
+            turnId: 4,
+            lines: [
+                {
+                    speaker: "Det. Keel",
+                    text: "Exotic concoctions, huh? Sounds interesting. What kind of drinks are we talking about here?",
+                    type: "dialogue"
+                },
+                {
+                    speaker: "Imani Costa",
+                    text: "Oh, nothing too wild—just a few mixtures I tried out. Things with... unique flavors, a bit more of a punch than your average cocktail.",
+                    type: "dialogue"
+                },
+                {
+                    speaker: "Keel",
+                    text: "Hmm, since you didn't notice anything unusual, I'll be on my way.",
+                    type: "dialogue"
+                }
+            ]
+        },
+        {
+            turnId: 5,
+            lines: [
+                {
+                    type: "narration",
+                    text: "On his way out, Keel manages to swipe Imani's recipe book and is taken aback by the absurdity of the concoctions inside. One recipe, Final Rest, is encrypted.Keel recognises this is to be a simple Caesar shift cypher. Accompanying the recipe is a clue: \"Beyond the gate, we drink without judgment. But to drink of this is to be judged; the gate that grants freedom grants the keys to condemnation."
+                }
+            ]
+        },
+        {
+            turnId: 6,
+            puzzlePage: "caesar.html",
+            lines: []
+        },
+        {
+            turnId: 7,
+            lines: [
+                {   speaker: "Det. Keel",
+                    text: "This drink contains scopolamine, the same drug used to subdue Serena. But in this amount it's not nearly potent enough",
+                    type: "dialogue"
+                }
+            ]
+
+        }
+
+    ],
+    scene4: [
         {
             turnId: 1,
             lines: [
