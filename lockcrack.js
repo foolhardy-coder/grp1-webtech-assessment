@@ -68,3 +68,10 @@ clearBtn.addEventListener('click', () => {
     input.classList.remove("correct", "partial", "wrong");
   });
 });
+
+const completePuzzleBtn = document.getElementById('complete-puzzle-btn');
+
+completePuzzleBtn.addEventListener('click', () => {
+  localStorage.setItem('puzzle3Completed', 'true'); // optional
+  window.location.href = 'index.html'; // redirect back to story page
+});
