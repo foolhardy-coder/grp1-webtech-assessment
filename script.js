@@ -26,9 +26,7 @@ const avatarMap = {
     "Alec Moreno": "url('https://i.pravatar.cc/60?img=7')"
 };
 
-// Paste your scenes variable in a separate file and include it before this script
-
-const sceneOrder = ['scene1', 'scene2', 'scene3']; // Adjust to your scenes' keys
+const sceneOrder = ['scene1', 'scene2', 'scene3', 'scene4', 'scene5', 'scene6'];
 
 let currentSceneName = 'scene1'; // Default starting scene
 
@@ -153,22 +151,41 @@ function renderCurrentLine(onComplete) {
 function renderTurn() {
     clearConversation();
     currentLineIndex = 0;
-    const currentTurn = scenes[currentSceneName][currentTurnIndex];
-    if (currentTurn.puzzlePage) {
-            currentTurnIndex++;
-            saveProgress();
-            if (currentTurnIndex < scenes[currentSceneName].length) {
-                renderTurn();
+    const currentScene = scenes[currentSceneName];
 
-            return;
+    // Check if scene is finished, transition to next scene if available
+    if (currentTurnIndex >= currentScene.length) {
+        const currentSceneIndex = sceneOrder.indexOf(currentSceneName);
+        const nextSceneName = sceneOrder[currentSceneIndex + 1];
+        if (nextSceneName && scenes[nextSceneName]) {
+            currentSceneName = nextSceneName;
+            currentTurnIndex = 0;
+            saveProgress();
+            renderTurn(); // Render first turn of next scene
+        } else {
+            nextBtn.style.display = 'none'; // Hide Next button if no more scenes
+            console.log("End of story.");
         }
+        return;
+    }
+
+    const currentTurn = currentScene[currentTurnIndex];
+    if (currentTurn.puzzlePage) {
+        // Increment currentTurnIndex before saving to move past the puzzle turn
+        currentTurnIndex++;
         saveProgress();
         window.location.href = currentTurn.puzzlePage;
         return;
     }
     renderCurrentLine(() => {
         saveProgress();
-
+        // Show Next button if there are more turns or scenes
+        const currentSceneIndex = sceneOrder.indexOf(currentSceneName);
+        if (currentTurnIndex < currentScene.length - 1 || currentSceneIndex < sceneOrder.length - 1) {
+            nextBtn.style.display = 'inline-block';
+        } else {
+            nextBtn.style.display = 'none';
+        }
     });
 }
 
@@ -203,37 +220,19 @@ nextBtn.addEventListener('click', () => {
     if (nextTurnIndex < currentScene.length) {
         const nextTurn = currentScene[nextTurnIndex];
         if (nextTurn.puzzlePage) {
-
             currentTurnIndex = nextTurnIndex;
+            // Increment currentTurnIndex before saving to move past the puzzle turn
+            currentTurnIndex++;
             saveProgress();
             window.location.href = nextTurn.puzzlePage;
             return;
-
-
-            if (currentTurnIndex > currentScene.length - 1) {
-
-                const currentSceneIndex = sceneOrder.indexOf(currentSceneName);
-                const nextSceneName = sceneOrder[currentSceneIndex + 1];
-                if (nextSceneName && scenes[nextSceneName]) {
-                    currentSceneName = nextSceneName;
-                    currentTurnIndex = 0;
-                } else {
-                    nextBtn.style.display = 'none';
-                }
-                saveProgress();
-            }
-
-            window.location.href = nextTurn.puzzlePage;
-            return;
         }
-
         currentTurnIndex = nextTurnIndex;
         renderTurn();
     } else {
-        // End of scene logic...
+        // End of scene logic: Transition to next scene
         const currentSceneIndex = sceneOrder.indexOf(currentSceneName);
         const nextSceneName = sceneOrder[currentSceneIndex + 1];
-
         if (nextSceneName && scenes[nextSceneName]) {
             currentSceneName = nextSceneName;
             currentTurnIndex = 0;
@@ -262,6 +261,5 @@ window.onload = () => {
         currentSceneName = 'scene1';
         currentTurnIndex = 0;
     }
-
     renderTurn();
 };

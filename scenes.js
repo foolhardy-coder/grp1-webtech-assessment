@@ -269,6 +269,23 @@ const scenes = {
             turnId: 1,
             lines: [
                 {
+                    type: "narration",
+                    text: "Word reaches Keel that Serena has regained consciousness at the hospital. When he meets with her, she recounts the events of the wedding night. She had a conversation with Marla about the drinks, during which Marla revealed a secret ingredient she used to “pack the punch.” Later, Serena stole some of this ingredient for a bit of late-night fun with Ellen. She admits that they both had way too much. Feeling sick and worried about ruining her assigned suite, Serena decided to leave and head home instead of staying the night, leaving Ellen alone in the courtyard."
+                },
+                {
+                  type: "dialogue",
+                  speaker: "Det. Keel",
+                  text: "Hmm, this means Imani is clear. I'll go update Dominic on my findings so far"
+                }]
+        },
+        {
+            turnId: 2,
+            lines: [
+                {
+                    type: "narration",
+                    text: "Keel walks in on Dominic and Alec laughing over drinks"
+                },
+                {
                     speaker: "Det. Keel",
                     text: "Glad I caught you in a good mood this time.",
                     avatar: "",
@@ -295,12 +312,11 @@ const scenes = {
             ]
         },
         {
-            turnId: 2,
+            turnId: 3,
             lines: [
                 {
                     speaker: "Alec Moreno",
                     text: "Any progress in your investigation, Detective?",
-                    avatar: "",
                     type: "dialogue"
                 },
                 {
@@ -318,7 +334,7 @@ const scenes = {
             ]
         },
         {
-            turnId: 3,
+            turnId: 4,
             lines: [
                 {
                     speaker: "Alec Moreno",
@@ -335,7 +351,7 @@ const scenes = {
             ]
         },
         {
-            turnId: 4,
+            turnId: 5,
             lines: [
                 {
                     speaker: "Alec Moreno",
@@ -352,7 +368,7 @@ const scenes = {
             ]
         },
         {
-            turnId: 5,
+            turnId: 6,
             lines: [
                 {
                     speaker: "Det. Keel",
@@ -375,7 +391,7 @@ const scenes = {
             ]
         },
         {
-            turnId: 6,
+            turnId: 7,
             lines: [
                 {
                     type: "narration",
@@ -384,7 +400,7 @@ const scenes = {
             ]
         },
         {
-            turnId: 7,
+            turnId: 8,
             lines: [
                 {
                     speaker: "Det. Keel",
@@ -407,7 +423,7 @@ const scenes = {
             ]
         },
         {
-            turnId: 8,
+            turnId: 9,
             lines: [
                 {
                     speaker: "Det. Keel",
@@ -424,7 +440,7 @@ const scenes = {
             ]
         },
         {
-            turnId: 9,
+            turnId: 10,
             lines: [
                 {
                     speaker: "Det. Keel",
@@ -441,7 +457,7 @@ const scenes = {
             ]
         },
         {
-            turnId: 10,
+            turnId: 11,
             lines: [
                 {
                     speaker: "Det. Keel",
@@ -458,7 +474,7 @@ const scenes = {
             ]
         },
         {
-            turnId: 11,
+            turnId: 12,
             lines: [
                 {
                     speaker: "Det. Keel",
@@ -481,4 +497,118 @@ const scenes = {
             ]
         }
     ],
+    scene5: [
+        {
+            turnId: 1,
+            lines: [
+                {
+                    type: "narration",
+                    text: "After his discussion with Dominic, Det. Keel tracks down Marla Esten at her shed near the garden."
+                },
+                {
+                    speaker: "Det. Keel",
+                    text: "Marla Esten?",
+                    type: "dialogue"
+                },
+                {
+                    speaker: "Marla Esten",
+                    text: "Detective. Figured you'd come around sooner or later.",
+                    type: "dialogue"
+                }
+            ]
+        },
+        {
+            turnId: 2,
+            lines: [
+                {
+                    speaker: "Det. Keel",
+                    text: "Marla Esten, to the best of my knowledge, you're the earliest to arrive among the estate staff.",
+                    type: "dialogue"
+                },
+                {
+                    speaker: "Marla Esten",
+                    text: "Yes.",
+                    type: "dialogue"
+                },
+                {
+                    speaker: "Det. Keel",
+                    text: "Where were you on the morning of the murder?",
+                    type: "dialogue"
+                },
+                {
+                    speaker: "Marla Esten",
+                    text: "Oh, that... that was my day off.",
+                    type: "dialogue"
+                }
+            ]
+        },
+        {
+            turnId: 3,
+            lines: [
+                {
+                  speaker: "Det. Keel",
+                  text: "Day off? Dominic is aware of this?",
+                  type: "dialogue"
+                },
+                {
+                  speaker: "Marla Esten",
+                  text: "He always forgets, and I don't like to bother him with the minor things.",
+                  type: "dialogue"
+                }
+                ]
+        },
+        {
+            turnId: 4,
+            lines: [
+                {
+                    speaker: "Det. Keel",
+                    text: "I see. Did you notice anything unusual the night before?",
+                    type: "dialogue"
+                },
+                {
+                    speaker: "Marla Esten",
+                    text: "No, not at all... oh, wait — Alec was so sloshed he swapped shoes with Tomas the fisherman. No idea why, they didn’t even fit.",
+                    type: "dialogue"
+                }
+                ]
+        },
+        {
+            turnId: 5,
+            lines: [
+                {
+                    text: "Keel’s mind sharpens. The wedding had a strictly formal dress code — even the fisherman would have shown up dressed appropriately. The perpetrator had left bloodied boot prints at the scene. Could Alec’s odd behaviour — and his pushback against an internal investigation — be a sign he’s hiding something? Keel leaves immediately, hurrying to get a search warrant for his home.",
+                    type: "narration"
+
+                }
+            ]
+        }
+
+    ],
+    scene6: [
+        {
+            turnId: 1,
+            lines: [
+                {
+                    type: "narration",
+                    text: "After Keel, obtains a search warrant for Alec, he arrives at his home, and heads straight for his office, after a bit of searching he comes across a letter with a strange already broken seal. A letter is inside, filled with numbers and gibberish, the only discernible text seems to be a riddle or clue on hoe to decode the rest of the message"
+                }
+            ]
+        },
+        {
+            turnId: 2,
+            puzzlePage: "combinedPuzzle.html",
+            lines: []
+        },
+        {
+            turnId: 3,
+            lines: [
+                {
+                    type: "narration",
+                    text: "Alec Moreau is arrested for the murder of Ellen Clyde, further interrogations prove pointless as he is determined to keep his mouth shut. Dominic is given a semblance of closure. You solved it Keel, Great Work!!"
+                }
+            ]
+        }
+
+    ]
+
 };
