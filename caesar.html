@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<head>
+    <title>Caesar Cipher Decoder</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        input, button {
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            width: 100%;
+        }
+        #output {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        textarea {
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            width: 100%;
+            resize: vertical;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal-button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .modal-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body id="ShiftTool">
+<header class="navbar">
+    <div class="navbar-section">
+        <img src="website_icon.png" alt="Website Icon" class="navbar-icon">
+        <div class="navbar-title">A Murder Mystery</div>
+    </div>
+    <div class="navbar-section">
+        <a href="index.html">The Story</a>
+        <a href="puzzle1.html">Puzzle 1</a>
+        <a href="puzzle2.html">Puzzle 2</a>
+        <a href="puzzle3.html">Puzzle 3</a>
+        <a href="puzzle4.html">Puzzle 4</a>
+        <a href="puzzle5.html">Puzzle 5</a>
+        <li class="dropdown">
+            <a href="#">Tools</a>
+            <ul class="dropdown-content">
+                <li><a href="ScrambledTool.html">Alphabet cypher</a></li>
+                <li><a href="Caesar_Tool.html">Caesar cypher</a></li>
+                <li><a href="periodic_Table.html">Periodic cypher</a></li>
+            </ul>
+        </li>
+        <a href="suspects.html">Suspects</a>
+    </div>
+</header>
+
+<h2>Caesar Cipher Decoder</h2>
+
+<div id="RecipeBox">
+    <label for="recipe"><b>Recipe:</b></label>
+    <textarea id="recipe" readonly style="height: 300px;">
+Final Rest
+
+Afyjwvawflk:
+
+1 gr. Yaf (hjwxwjstdq Dgfvgf Vjq)
+
+1/2 gr. Wdvwjxdgowj daimwmj
+
+1/4 gr. Tdmw Umjsusg
+
+1/2 gr. Xjwkz daew bmauw
+
+1/2 gr. Kaehdw kqjmh
+
+2 vjghk gx kughgdseafw
+
+1 khjay gx xjwkz jgkwesjq
+
+1/2 gr. Kgvs oslwj
+
+Afkljmulagfk:
+
+Af s kzscwj, ugetafw lzw yaf, wdvwjxdgowj daimwmj, daew bmauw, sfv kaehdw kqjmh.
+
+Svv auw sfv kzscw naygjgmkdq xgj stgml 10 kwugfvk.
+
+Kljsaf lzw eaplmjw aflg s uzaddwv ugmhw ydskk.
+
+Usjwxmddq svv log vjghk gx kughgdseafw
+
+Lgh oalz s khdskz gx kgvs oslwj lg yanw al s dayzl xarr.
+
+Ywfldq klaj lzw vjafc lg ugetafw.
+
+Ysjfakz oalz s khjay gx xjwkz jgkwesjq, kdayzldq tjmakwv lg jwdwskw sjges.
+
+Kwjnw aeewvaslwdq sfv wfbgq lzw vjafc'k kegglz lsklw.
+    </textarea>
+</div>
+
+<div id="ClueBox">
+    <label for="clue"><b>Clue:</b></label>
+    <textarea id="clue" readonly style="height: 100px;">
+Beyond the gate, we drink without judgment. But to drink of this is to be judged; the gate that grants freedom grants the keys to condemnation.
+    </textarea>
+</div>
+
+<div id="ShiftBox">
+    <label for="shift">Enter Shift Amount:</label>
+    <input type="number" id="shift" placeholder="e.g. 3">
+</div>
+
+<button onclick="decode()">Decode</button>
+
+<div id="output"></div>
+
+<!-- Modal for displaying decrypted message when shift is 18 -->
+<div id="resultModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Decoded Message</h2>
+        <p id="modalOutput"></p>
+        <button id="complete-puzzle-btn" class="modal-button">Next</button>
+    </div>
+</div>
+
+<script src="caesar.js"></script>
+
+<footer>
+    <nav style="text-align: left; color: var(--header-text-color);">
+        <h3>Additional Links</h3>
+        <a href="#">Team Info</a> |
+        <a href="#">Project Info</a> |
+        <a href="#">Cheat Sheet</a> |
+        <a href="#">References</a>
+    </nav>
+    <p>&copy; 2025 My Website. All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,470 @@
+/* Color Definitions */
+:root {
+    --light-grey: #dddddd;
+    --black: #000000;
+    --white: #ffffff;
+    --grey: #9b9b9b;
+    --red: red;
+
+    /* Additional vars from dialogue CSS */
+    --dialogue-grey: #292929; /* Your dialogue --grey is darker */
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-grey);
+    color: var(--black);
+
+    /* Overridden by dialogue section: */
+    /* background-color: var(--dialogue-grey); */
+    /* margin: 0; */
+    /* font-family: Arial, sans-serif; */
+    /* color: var(--white); */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* padding: 50px 20px; */
+    /* min-height: 100vh; */
+}
+
+/* Header, Footer, and Navigation Styles */
+header, footer {
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-section {
+    flex: 1;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.navbar-section a {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: text-decoration 0.3s ease;
+}
+
+.navbar-section a:hover {
+    text-decoration: underline;
+}
+
+.navbar-section a.selected {
+    background-color: var(--grey);
+    border-radius: 5px;
+    color: var(--red);
+    padding: 0.2rem 0.5rem;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    visibility: hidden; /* Use visibility instead of display */
+    position: absolute;
+    background-color: var(--white);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 0.5rem 0;
+    list-style: none;
+    opacity: 0; /* Add opacity for smooth transition */
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.dropdown-content a {
+    color: var(--black);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--grey);
+    color: var(--red);
+}
+
+/* Ensure the dropdown menu stays visible when hovering over the dropdown container */
+.dropdown:hover .dropdown-content {
+    visibility: visible; /* Use visibility instead of display */
+    opacity: 1; /* Smooth transition */
+}
+
+/* Main Content Styles */
+main {
+    padding: 2rem;
+}
+
+section {
+    background-color: var(--grey);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+/* Image Styles */
+img {
+    width: 75px;
+    height: 75px;
+}
+
+/* Footer Navigation Styles */
+footer nav ul {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+    position: relative;
+}
+
+.letter-group {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.letter-group span {
+    margin-right: 5px;
+}
+
+input.assigned-letter {
+    width: 40px;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+input.assigned-letter:focus {
+    background-color: var(--light-grey);
+}
+
+#caesar_para_1{
+    text-align: left;
+    background-color: black;
+    color: white;
+    width: 750px;
+}
+
+#caesar_para_2{
+    margin-left: 750px;
+    text-align: right;
+    background-color: grey;
+    color: black;
+    width: 730px;
+}
+
+#caesar_para_3{
+    text-align: left;
+    background-color: black;
+    color: maroon;
+    width:750px;
+}
+
+#Caesar_Answer{
+    margin-left:600px;
+}
+
+#puzzle2{
+    background-color: maroon;
+}
+
+#Puzzle2_header{
+    color: black;
+}
+
+#ShiftTool{
+    background-color: maroon;
+
+}
+
+#PhraseBox{
+    background-color: var(--grey);
+
+    margin-bottom: 50px;
+}
+
+#ShiftBox{
+    background-color: var(--light-grey);
+    margin-bottom: 50px;
+}
+
+.lock-container {
+    position: relative;
+    width: 300px;
+}
+
+.lock-img {
+    display: block;
+    width: 200%;
+    height: auto;
+}
+
+.last-guess-container {
+    background: #ffffffcc;
+    padding: 10px 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: monospace;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    align-self: flex-end;
+}
+
+.feedback-box {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 2px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 1px solid #ccc;
+}
+
+.correct {
+    background-color: #b6eab6;
+}
+
+.partial {
+    background-color: #fce9b2;
+}
+
+.wrong {
+    background-color: #eee;
+}
+
+#popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 2px solid black;
+    padding: 30px;
+    z-index: 100;
+}
+
+.hidden {
+    display: none;
+}
+
+.inputs {
+    position: absolute;
+    top: 55%;
+    left: 97%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 10px;
+}
+
+.inputs input {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#try-btn,
+#clear-btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+#clear-btn {
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.button-container {
+    position: static;
+    bottom: 10px;
+    right: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.key-box {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.key-color {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.puzzle-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.left-side {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.right-side {
+    flex: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    min-height: 400px;
+    position: relative;
+}
+
+/* ========================== */
+/* Dialogue Section */
+/* ========================== */
+
+body {
+    /* Overriding body background, text color, and layout for dialogue pages */
+    background-color: var(--dialogue-grey);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    min-height: 100vh;
+}
+
+.dialogue-wrapper {
+    display: flex;
+    margin-bottom: 20px;
+    max-width: 700px; /* fixed max container width */
+    width: 100%;
+}
+
+.dialogue-wrapper.left {
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.dialogue-wrapper.right {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.avatar-bubble {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--black);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 5px var(--red);
+    flex-shrink: 0;
+    margin: 0 10px;
+}
+
+.narration-box {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px 25px;
+    background-color: #eee;
+    color: #333;
+    font-style: italic;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 1.1em;
+    line-height: 1.4em;
+}
+
+.dialogue-box {
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    padding: 20px;
+    color: var(--white);
+    width: 600px;
+    max-width: 600px;
+    min-height: 80px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    box-shadow: 0 0 10px #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.speaker-name {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--red);
+    font-size: 1.1rem;
+}
+
+.dialogue-text {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+#next-btn {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease;
+    margin-top: 30px;
+}
+
+#next-btn:hover {
+    background-color: var(--red);
+}
