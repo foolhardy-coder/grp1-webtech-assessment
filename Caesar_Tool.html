@@ -26,7 +26,6 @@
         <a href="puzzle2.html">Puzzle 2</a>
         <a href="puzzle3.html">Puzzle 3</a>
         <a href="puzzle4.html">Puzzle 4</a>
-        <a href="puzzle5.html">Puzzle 5</a>
             <li class="dropdown">
                 <a href="#">Tools</a>
                 <ul class="dropdown-content">
@@ -57,7 +56,6 @@
 
   <script>
 
-    // Caesar Cipher function
     function caesarCipher(str, shift) {
     var output = "";
     for (var i = 0; i < str.length; i++) {
@@ -65,7 +63,7 @@
 
       if ((ascii >= 65 && ascii <= 90) || (ascii >= 97 && ascii <= 122)) {
       var isUpper = ascii <= 90;
-      ascii -= shift; // Subtract shift for decoding
+      ascii -= shift;
 
       if (isUpper && ascii < 65) {
         ascii += 26;
@@ -79,7 +77,7 @@
   return output;
 }
   
-      // Function to get input values and display result
+      
       function decode() {
         var phrase = document.getElementById("phrase").value;
         var shift = parseInt(document.getElementById("shift").value);
@@ -96,14 +94,10 @@
   </script>
 
   <footer>
-    <nav style="text-align: left; color: var(--header-text-color);">
-        <h3>Additional Links</h3>
-        <a href="#">Team Info</a> | 
-        <a href="#">Project Info</a> | 
-        <a href="#">Cheat Sheet</a> | 
-        <a href="#">References</a>
-    </nav>
-  <p>&copy; 2025 My Website. All rights reserved.</p>
+    
+      <p>Created by Alexander Wilson-Hill</p>
+      <p>Matric number: 40655024</p>
+  
   </footer>
 </body>
 </html>

@@ -361,3 +361,13 @@ input.assigned-letter:focus {
     min-height: 400px;
     position: relative;
   }
+
+#customDecodedOutput {
+        border: 1px solid #ccc;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 4px;
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+    }

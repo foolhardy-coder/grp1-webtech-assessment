@@ -31,12 +31,24 @@ function updateDecodedMessage() {
 window.addEventListener('DOMContentLoaded', () => {
     const scrambledInput = document.getElementById('customScrambledMessageInput');
     // Get the input field for the scrambled message
+    const decodedOutput = document.getElementById('customDecodedOutput');
+    decodedOutput.textContent = 'Awaiting input';
 
-    scrambledInput.addEventListener('input', updateDecodedMessage);
-    // Listen for any changes in the message input field
+    scrambledInput.addEventListener('input', () => {
+        if (scrambledInput.value.trim() === '') {
+            decodedOutput.textContent = 'Awaiting input';
+        } else {
+            updateDecodedMessage();
+        }
+    });
 
     document.querySelectorAll('.assigned-letter').forEach(input => {
-        input.addEventListener('input', updateDecodedMessage);
-        // Listen for any changes in the assigned-letter inputs
+        input.addEventListener('input', () => {
+            if (scrambledInput.value.trim() === '') {
+                decodedOutput.textContent = 'Awaiting input';
+            } else {
+                updateDecodedMessage();
+            }
+        });
     });
 });

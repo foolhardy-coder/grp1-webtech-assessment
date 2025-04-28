@@ -1,4 +1,4 @@
-const correctCode = ['9', '1', '7', '3']; // Answer
+const correctCode = ['5', '2', '7', '5']; // Answer
 const inputs = document.querySelectorAll('.inputs input');
 const tryBtn = document.getElementById('try-btn');
 const clearBtn = document.getElementById('clear-btn');
